@@ -1,1 +1,14 @@
-<p>photos works!</p>
+<mat-card *ngFor="let photo of photos">
+    <mat-card-subtitle>
+        {{photo.title}}
+    </mat-card-subtitle>
+    <img mat-card-image [src]="photo.thumbnailUrl">
+    <mat-card-content>
+        <mat-card-action>
+            <a mat-button mat-raised-button [href]="photo.url" target="_blank">
+                Muestra Imagen
+            </a>
+            <button mat-button mat-raised-button color="primary" (click)="click()">¡Haz Click!</button>
+        </mat-card-action>
+    </mat-card-content>
+</mat-card>

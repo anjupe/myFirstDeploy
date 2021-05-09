@@ -8,21 +8,13 @@ import { Photo } from './models/Photo';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent{
 
-  photos: Photo[] = [];
+  
   albumsId = [1,2,3];
   
-  constructor(public photoService: PhotosService){
+  constructor(){
 
   }
-  ngOnInit(){
-    this.photoService.getPhotos().subscribe(
-      photos => {
-        console.log(photos);
-        this.photos = photos;
-      }, 
-      err => console.log(err)
-    )
-  }
+  
 }
